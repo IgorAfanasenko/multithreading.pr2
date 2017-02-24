@@ -1,48 +1,18 @@
-Boilerplate project
-===============
-This project is a ready-to use boilerplate for "It's not a bug, It's a feature" Java course.
+Multithreading HW2
+==================
 
-#### How-to use
+#### Prime Numbers
 
-1. `git clone https://github.com/ChangeRequest/boilerplate-project.git name_of_new_project`
-2. `git remote remove origin`
-3. `git remote add origin https://github.com/new_repo/name_of_new_project.git`
-4. Update project name in `settings.gradle`
-5. Update `README.MD` to match newly created repository.
-6. Update Author name in `LICENSE` (if needed)
-7. Continue working in your new ready-to-use repository.
+Create class, that calculates amount of prime numbers in specified array.
+There should be at least 3 implementations:
+* single thread implementation
+* using divide and conquer algorithm with *java.util.concurrent.ForkJoinPool*, you can either use RecursiveTask or RecursiveAction (implementing for both ways is a big plus)
+* using divide and conquer algorithm **without** *java.util.concurrent.ForkJoinPool*
 
-####Already configured parts
+Create demo class where you should compare performance for each implementation.
+There should be testing at least on 5 arrays with different length: 10000000, 1000000, 100000, 10000, 1000. 
 
-* Travis-CI configuration file
-* .gitignore file
-* build.gradle (already contains all needed imports)
-* License file with `Apache License Version 2.0`
-* empty package in src folder (`school.lemon.changerequest.java`)
-
-#### Travis-CI configuration
-* Oracle JDK 8
-* Install step: `gradlew clean assemble`
-* Check step: `gradlew check`
-
-#### .gitignore
-Already configured to ignore most of unwonted stuff:
-* eclipse ignores
-* IDEA ignores
-* Java and Groovy ignores
-* gradle and maven ignores
-* etc.
-
-#### build.gradle
-* group is `school.lemon.changerequest.java`
-* applied module from [gradle_common project]:
-  * commonModule
-  * javaModule
-  * testModule
-  * idea
-  * eclipse
-
-
-  
-[gradle_common project]: https://github.com/ChangeRequest/gradle_common
-
+**NOTES**:
+* A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+* Make your implementation flexible, so one implementation can be easily replaced by another.
+* Create unit tests for most important method like verification for prime, and calculation amount of prime numbers in array/part of array.  
